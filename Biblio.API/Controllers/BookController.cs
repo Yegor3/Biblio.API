@@ -1,19 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
+using Biblio.Api.Models.Requests;
 
-namespace Biblio.API.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-public class BookController : ControllerBase
+namespace Biblio.API.Controllers
 {
-    private readonly ILogger<BookController> _logger;
 
-    public BookController(ILogger<BookController> logger)
+    [ApiController]
+    [Route("[controller]")]
+    public class BookController : ControllerBase
     {
-        _logger = logger;
-    }
+        private readonly ILogger<BookController> _logger;
 
-    [HttpPost]
-    public void Post()
-    {}
+        public BookController(ILogger<BookController> logger)
+        {
+            _logger = logger;
+        }
+
+        [HttpPost]
+        public void Post(CreateBookRequest creatBookRequest)
+        { }
+    }
 }
