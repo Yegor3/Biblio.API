@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Biblio.Api.Models.Requests;
 using Bibli.API.Models.Results;
+using Biblio.Common.Entities;
 
 namespace Biblio.API.Controllers
 {
@@ -17,12 +18,33 @@ namespace Biblio.API.Controllers
         }
 
         [HttpPost]
-        public CreateBookResult Post(CreateBookRequest creatBookRequest)
+        public CreateBookResult Post([FromBody] CreateBookRequest creatBookRequest)
         {
             return new CreateBookResult
             {
                 BookId = 0
             };
+        }
+
+        [HttpGet("ById/(BookId)")]
+        public Book Get([FromRoute] long BookId)
+        {
+            return new Book
+            {
+                BookId = 0
+            };
+        }
+
+        [HttpPut]
+        public bool Get([FromBody] Book book)
+        {
+            return true;
+        }
+
+        [HttpDelete("ById/(BookId)")]
+        public bool Delete([FromRoute] long BookId)
+        {
+            return true;
         }
     }
 }
