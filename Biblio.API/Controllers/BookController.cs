@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Biblio.Api.Models.Requests;
+using Bibli.API.Models.Results;
 
 namespace Biblio.API.Controllers
 {
@@ -16,7 +17,12 @@ namespace Biblio.API.Controllers
         }
 
         [HttpPost]
-        public void Post(CreateBookRequest creatBookRequest)
-        { }
+        public CreateBookResult Post(CreateBookRequest creatBookRequest)
+        {
+            return new CreateBookResult
+            {
+                BookId = 0
+            };
+        }
     }
 }
