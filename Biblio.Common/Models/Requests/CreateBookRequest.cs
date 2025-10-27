@@ -1,6 +1,6 @@
 using Biblio.Common.Enums;
 
-namespace Biblio.Api.Models.Requests
+namespace Biblio.Common.Models.Requests
 {
     public class CreateBookRequest
     {
